@@ -2,7 +2,6 @@
 
 Aude, Ludivine
 
-<hr>
 __Objectifs :__
 - préparer des conteneurs Docker pour des outils de Dataviz
 - technologies retenues : MySQL et GRAFANA. Seveur Linux.
