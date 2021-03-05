@@ -67,28 +67,37 @@ Se rendre sur l'onglet _Dashboard_ ou _Explore_ de la barre de navigation pour g
 
 
 <hr>
+
 ### Autres commandes Docker
 
-`docker ps # Visualiser les conteneurs actifs
-docker ps -a # Visualiser tous les conteneurs
-docker rm [container] # Supprimer un conteneur inactif
-docker rm -f [container] # Forcer la suppression d'un conteneur actif
-docker images # Lister les images existantes
-docker rmi [image] # Supprimer une image docker
-docker exec -t -i [container] /bin/bash # Exécuter des commandes dans un conteneur actif
-docker inspect [container] # Inspecter la configuration d'un conteneur
-docker build -t [image] . # Construire une image à partir d'un Dockerfile
-docker history [image] # Visualiser l'ensemble des couches d'une image
-docker logs --tail 5 [container] # Visualiser les logs d'un conteneur (les 5 dernières lignes)`
+`docker ps # Visualiser les conteneurs actifs` <br>
+`docker ps -a # Visualiser tous les conteneurs` <br>
+`docker rm [container] # Supprimer un conteneur inactif` <br>
+`docker rm -f [container] # Forcer la suppression d'un conteneur actif` <br>
+`docker images # Lister les images existantes` <br>
+`docker rmi [image] # Supprimer une image docker` <br>
+`docker exec -t -i [container] /bin/bash # Exécuter des commandes dans un conteneur acti` <br>
+`docker inspect [container] # Inspecter la configuration d'un conteneur` <br>
+`docker build -t [image] . # Construire une image à partir d'un Dockerfile` <br>
+`docker history [image] # Visualiser l'ensemble des couches d'une image` <br>
+`docker logs --tail 5 [container] # Visualiser les logs d'un conteneur (les 5 dernières lignes)`<br>
+
+`docker stop $(docker ps -a -q) # Stop all containers` <br>
+`docker rm $(docker ps -a -q) # Delete all containers` <br>
+`docker rmi $(docker images -q) # Delete all images` <br>
+`docker volume prune -f # Deleta all volumes` <br>
+`docker network prune -f # Delete docker networks` <br>
+`docker system prune -a -f # Deleta other resources` <br>
 
 ###### Intéractions avec le registry
-`docker login # Se connecter au registry
-docker search [name] # Rechercher une image
-docker pull [image] # Récupérer une image
-docker push [image] # Pouser une image du cache local au registry
-docker tag [UUID] [image]:[tag] # Tagger une image`
+`docker login # Se connecter au registry` <br>
+`docker search [name] # Rechercher une image` <br>
+`docker pull [image] # Récupérer une image` <br>
+`docker push [image] # Pouser une image du cache local au registry` <br>
+`docker tag [UUID] [image]:[tag] # Tagger une image` <br>
+
 
 ###### Docker-Compose
-`docker-compose up -d # Démarre un ensemble de conteneurs en arrière-plan
-docker-compose down # Stoppe un ensemble de conteneurs
-docker-compose exec [service] [command] # Exécute une commande au sein d'un service`
+`docker-compose up -d # Démarre un ensemble de conteneurs en arrière-plan` <br>
+`docker-compose down # Stoppe un ensemble de conteneurs` <br>
+`docker-compose exec [service] [command] # Exécute une commande au sein d'un service`
