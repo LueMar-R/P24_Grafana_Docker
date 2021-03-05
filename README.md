@@ -5,6 +5,8 @@ __Objectifs :__
 - technologies retenues : MySQL et GRAFANA. Seveur Linux.
 <hr>
 
+### Commandes de base sans Docker-Compose
+
 #### Accéder au seuveur
 
 `ssh user1@10.10.51.157`<br>
@@ -43,14 +45,19 @@ arrêter/démarrer le container :<br>
 `docker stop mysql`<br>
 `docker start mysql`<br>
 
-__________________________________________________________________
+#### Accèder à Grafana sur le serveur <br>
+Dans un navigateur, entrer l'adresse du serveur suivie du n° de port d'écoute de Grafana<br>
+`10.10.51.157:3000`    <br>
++entrer les identifiants (à la premiere identification : admin admin) 
 
-construire le container grafana
-docker run -d -p 3000:3000 grafana/grafana
+Dans la barre de navigation, se rendre dans<br>
+_configuration > datasources > add_datasource > mysql_
 
-dnas un navigateur, entrer l'adresse du serveur suivie du n° de port d'écoute de grafana
-10.10.51.157:3000   >>> entrer les id (pw = coucou) (à la premiere identification : admin admin) 
+Renseigner les champs pour accèder à mysql :<br>
+![connexion](connexion_grafana.png)
 
-configuration>datasources>add_datasource>mysql
+#### Générer les graphiques
+Les données vaccinales sql sont maintenant disponibles sur Grafana. <br>
+Se rendre sur l'onglet _Dashboard_ ou _Explore_ de la barre de navigation pour générer la dataviz.<br>
 
-`docker container ls -a`
+![graph](graph.png)
